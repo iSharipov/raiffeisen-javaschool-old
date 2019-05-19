@@ -1,4 +1,6 @@
-package ru.raiffeisen.proxy;
+package ru.raiffeisen.tasks.task4;
+
+import ru.raiffeisen.proxy.Person;
 
 import java.util.ArrayList;
 import java.util.List;

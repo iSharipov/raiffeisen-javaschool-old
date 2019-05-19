@@ -1,5 +1,9 @@
 package ru.raiffeisen.proxy;
 
+import ru.raiffeisen.tasks.task4.CachedRepository;
+import ru.raiffeisen.tasks.task4.PersonRepository;
+import ru.raiffeisen.tasks.task4.Repository;
+
 import java.lang.reflect.Proxy;
 import java.net.MalformedURLException;
 

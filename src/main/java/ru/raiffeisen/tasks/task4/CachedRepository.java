@@ -1,4 +1,6 @@
-package ru.raiffeisen.proxy;
+package ru.raiffeisen.tasks.task4;
+
+import ru.raiffeisen.proxy.Person;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

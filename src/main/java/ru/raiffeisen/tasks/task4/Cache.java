@@ -1,4 +1,4 @@
-package ru.raiffeisen.proxy;
+package ru.raiffeisen.tasks.task4;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
