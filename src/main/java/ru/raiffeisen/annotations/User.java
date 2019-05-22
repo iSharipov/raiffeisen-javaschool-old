@@ -7,6 +7,7 @@ public class User {
     private String name;
     private String sirname;
     private int age;
+    @ValueAnnotation(2)
     private String email;
     @Inn
     private String inn;

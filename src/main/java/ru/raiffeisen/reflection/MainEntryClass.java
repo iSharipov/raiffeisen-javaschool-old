@@ -3,17 +3,28 @@ package ru.raiffeisen.reflection;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MainEntryClass {
 
+    public static boolean isDefault(Method method) {
+        final int SYNTHETIC = 0x00001000;
+        return ((method.getModifiers()
+                & (Modifier.ABSTRACT | Modifier.PUBLIC | Modifier.STATIC | SYNTHETIC)) == Modifier.PUBLIC)
+                && method.getDeclaringClass().isInterface();
+    }
+
     public static void main(String[] args) {
-        Student student = new Student("Петр", 25);
+        Person student = new Student("Петр", 25);
+        Class<Person> personClass = Person.class;
+        System.out.println(Person.class.equals(student.getClass()));
 
         //Reflection
-        Class<? extends Student> studentClass = student.getClass();
+        Class<? extends Person> studentClass = student.getClass();
+
 
         System.out.println("+++++++++Class name+++++++++");
         System.out.println(studentClass.getName());
