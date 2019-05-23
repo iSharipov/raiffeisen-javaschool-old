@@ -8,6 +8,6 @@ public class InnConstraintValidator implements ConstraintValidator<Inn, String> 
    }
 
    public boolean isValid(String obj, ConstraintValidatorContext context) {
-      return false;
+      return obj != null && !obj.isEmpty();
    }
 }

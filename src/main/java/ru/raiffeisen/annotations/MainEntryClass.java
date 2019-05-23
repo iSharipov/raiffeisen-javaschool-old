@@ -33,6 +33,7 @@ public class MainEntryClass {
         user.setSirname("Иванов");
         user.setAge(25);
         user.setEmail("123@mail.ru");
+        user.setInn("123");
 
         //Validate bean
         Set<ConstraintViolation<User>> constraintViolations = validator.validate(user);
