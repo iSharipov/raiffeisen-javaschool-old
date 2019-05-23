@@ -1,26 +1,35 @@
 package ru.raiffeisen.reflection;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Student extends PersonBase implements Studying {
 
     private String grade;
     private String id;
+    private Date startDate;
 
     public Student() {
         super("John", 12);
     }
 
     public Student(String name, Integer age) {
-        super(name, age);
+        this(name, age, new Date());
     }
 
-    public Student(String name, Integer age, String grade) {
-        this(name, age);
+    public Student(String name, Integer age, Date startDate) {
+        super(name, age);
+        this.startDate = startDate;
+    }
+
+    public Student(String name, Integer age, String grade, Date startDate) {
+        this(name, age, startDate);
         this.grade = grade;
     }
 
 
     public Student(String name, Integer age, String grade, String id) {
-        this(name, age, grade);
+        this(name, age, grade, new Date());
         this.id = id;
     }
 
@@ -30,6 +39,10 @@ public class Student extends PersonBase implements Studying {
 
     public String getId() {
         return id;
+    }
+
+    public String getStartDate() {
+        return dateFormatter(this.startDate);
     }
 
     public String getName(String name, Integer age) {
@@ -54,5 +67,8 @@ public class Student extends PersonBase implements Studying {
         //
     }
 
+    private String dateFormatter(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(date);
+    }
 }
-

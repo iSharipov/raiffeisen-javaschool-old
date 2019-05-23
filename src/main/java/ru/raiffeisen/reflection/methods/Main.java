@@ -6,6 +6,7 @@ import ru.raiffeisen.reflection.Student;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Date;
 
 import static ru.raiffeisen.Utils.delimeter;
 
@@ -29,6 +30,9 @@ public class Main {
         delimeter("Вызов метода с аргументами");
         //InvocationTargetException, IllegalAccessException
         System.out.println(getName.invoke(student, " Doe"));
-
+        delimeter("Вызов приватного метода");
+        Method getStartDate = student.getClass().getDeclaredMethod("dateFormatter", Date.class);
+        getStartDate.setAccessible(true);
+        System.out.println(getStartDate.invoke(student, new Date()));
     }
 }
